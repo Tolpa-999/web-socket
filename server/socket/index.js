@@ -22,7 +22,7 @@ const server = http.createServer(app)
 // console.log(process.env.FRONTEND_URL)
 const io = new Server(server, {
     cors: {
-        origin: allowedOrigins,
+        origin: true,
         methods: ["GET", "POST", "DELETE", "PUT", 'PATCH'],
         credentials: true
     }
