@@ -54,7 +54,7 @@ app.use(cookieParser())
 const fakeToken = "pla pla pla"
 
 app.all("*", (req, res) => {
-  res.status(404).json({ status: "error", message: req.t('server.not_available') })
+  res.status(404).json({ status: "error", message: 'resource not available' })
 })
 
 app.use(errorHandler);
