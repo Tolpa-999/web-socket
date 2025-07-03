@@ -9,8 +9,6 @@ import Message from '../models/Message.js'
 import { getConversation } from '../controllers/chat.js'
 dotenv.config()
 
-import {allowedOrigins} from '../utils/urls.js'
-
 
 const app = express()
 
@@ -41,6 +39,8 @@ io.on('connection', async (socket) => {
     let user
     try {
         user = await getUserDetailsFromToken(token)
+
+        console.log("user in index.js   ====> ", user)
     } catch (error) {
         console.error('Failed to get user details from token:', error)
         socket.disconnect(true)

@@ -17,6 +17,8 @@ const getUserDetailsFromToken = async(token)=>{
 
     const user = await User.findById(decode.userId).select('-password').lean()
 
+    console.log("user from getUserDetails ===> ", user)
+
     
 
 
