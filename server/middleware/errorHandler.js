@@ -4,9 +4,7 @@ import { STATUS_CODE } from '../utils/httpStatusCode.js'
 const errorHandler = (err, req, res, next) => {
   const statusCode = err.statusCode || 500;
 
-  const message = err.i18nKey
-    ? req.t(err.i18nKey)
-    : err.message || req.t("middleware.error");
+  const message = err.message || "server error";
 
     console.log("message =====> ", message)
 
