@@ -53,6 +53,11 @@ app.use(cookieParser())
 
 const fakeToken = "pla pla pla"
 
+app.get('/', (req, res) => {
+  res.send('Socket.IO server is running ✅');
+});
+
+
 app.all("*", (req, res) => {
   res.status(404).json({ status: "error", message: 'resource not available' })
 })
