@@ -46,7 +46,7 @@ app.use(cookieParser())
 const fakeToken = "pla pla pla"
 
 app.get('/', (req, res) => {
-  res.send('Socket.IO server is running ✅');
+  res.send('Socket.io is running');
 });
 
 

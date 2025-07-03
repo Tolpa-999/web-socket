@@ -38,7 +38,7 @@ io.on('connection', async (socket) => {
     console.log("token ====> ", token)
 
     // current user details 
-    let user
+    let user = null
     try {
         user = await getUserDetailsFromToken(token)
 
