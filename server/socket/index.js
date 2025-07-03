@@ -33,7 +33,9 @@ const onlineUser = new Set()
 io.on('connection', async (socket) => {
     console.log("connect User ", socket.id)
 
-    const token = socket.handshake.auth.token
+    const token = socket?.handshake?.auth?.token
+
+    console.log("token ====> ", token)
 
     // current user details 
     let user
@@ -48,6 +50,9 @@ io.on('connection', async (socket) => {
     }
 
     if (!user || !user._id) {
+
+
+
         console.error('Invalid user details:', user)
         socket.disconnect(true)
         return
